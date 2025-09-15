@@ -365,19 +365,16 @@ const modalsData = (t) => ({
 // 2. COMPONENTES DE UI REUTILIZÁVEIS
 // ----------------------------------------------------------------------
 
-const ServiceCard = ({ icon: Icon, title, description, onButtonClick, detailsText }) => (
-  <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:border-green-400 hover:scale-105 transition-all duration-300 text-center">
+const ServiceCard = ({ icon: Icon, title, description, onButtonClick }) => (
+  <div 
+    onClick={onButtonClick}
+    className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:border-green-400 hover:scale-105 transition-all duration-300 text-center cursor-pointer"
+  >
     <div className="bg-gray-700 p-4 rounded-full mb-6">
       <Icon className="w-8 h-8 text-green-400" />
     </div>
     <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-    <p className="text-gray-400 mb-6 flex-grow">{description}</p>
-    <button 
-      onClick={onButtonClick} 
-      className="bg-transparent border-2 border-green-500 rounded-full text-green-400 font-semibold py-2 px-6 hover:bg-green-500 hover:text-white transition-colors duration-300 mt-auto"
-    >
-      {detailsText}
-    </button>
+    <p className="text-gray-400 flex-grow">{description}</p>
   </div>
 );
 
@@ -553,7 +550,7 @@ const HeroSection = ({ content }) => (
   </header>
 );
 
-const ServicesSection = ({ content, data, onCardClick, t }) => (
+const ServicesSection = ({ content, data, onCardClick }) => (
   <main id="services" className="py-20 md:py-28 px-4">
     <div className="container mx-auto text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-3">{content.title}</h2>
@@ -564,7 +561,6 @@ const ServicesSection = ({ content, data, onCardClick, t }) => (
             key={service.id} 
             {...service} 
             onButtonClick={() => onCardClick(service.id)} 
-            detailsText={t.modalDetailsButton} 
           />
         ))}
       </div>
@@ -697,7 +693,6 @@ export default function App() {
         content={currentSiteConfig.servicesSection} 
         data={currentServicesData}
         onCardClick={handleOpenModal}
-        t={t}
       />
       <Footer content={currentSiteConfig.footer} />
       <FloatingActionButton 

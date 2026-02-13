@@ -247,9 +247,9 @@ const siteConfig = (t) => ({
     contactTitle: t.footerContactTitle,
     hoursTitle: t.footerHoursTitle,
     address: { 
-      line1: "800 Broadway", 
-      line2: "Everett, MA 02149", 
-      url: "https://www.google.com/maps/search/?api=1&query=800+Broadway,+Everett,+MA+02149" 
+      line1: "40 Easter Avenue, Suite 324", 
+      line2: "Malden, MA 02148", 
+      url: "https://www.google.com/maps/search/?api=1&query=40+Easter+Avenue+Suite+324+Malden+MA+02148" 
     },
     phone: "+1 (617) 892-3756",
     email: "customercare@jaques-enterprises.com",

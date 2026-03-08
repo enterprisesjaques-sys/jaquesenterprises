@@ -230,7 +230,7 @@ const i18nConfig = {
 
 const siteConfig = (t) => ({
   companyName: "JAQUES ENTERPRISES",
-  logoUrl: "https://i.ibb.co/HfRT32Ct/9286c25c-d42a-11ef-a7a4-0242ac110002-png-regular-image.png",
+  logoUrl: "https://i.ibb.co/NdqS0v5m/Design-sem-nome.png",
   hero: {
     title: t.heroTitle,
     subtitle: t.heroSubtitle,
@@ -249,11 +249,11 @@ const siteConfig = (t) => ({
     address: { 
       line1: "40 Easter Avenue, Suite 324", 
       line2: "Malden, MA 02148", 
-      url: "https://www.google.com/maps/search/?api=1&query=40+Easter+Avenue+Suite+324+Malden+MA+02148" 
+      url: "https://www.google.com/maps/search/?api=1&query=40+Easter+Avenue,+Suite+324,+Malden,+MA+02148" 
     },
     phone: "+1 (617) 892-3756",
     email: "customercare@jaques-enterprises.com",
-    workingHours: [{ day: t.footerHoursDay, hours: "09:00 AM – 09:00 PM" }],
+    workingHours: [{ day: t.footerHoursDay, hours: "7:00 AM – 7:00 PM" }],
     copyright: `© ${new Date().getFullYear()} JAQUES ENTERPRISES. All rights reserved.`
   },
   fabLinks: (t) => [
@@ -368,10 +368,10 @@ const modalsData = (t) => ({
 const ServiceCard = ({ icon: Icon, title, description, onButtonClick }) => (
   <div 
     onClick={onButtonClick}
-    className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:border-green-400 hover:scale-105 transition-all duration-300 text-center cursor-pointer"
+    className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 flex flex-col items-center hover:border-blue-500 hover:scale-105 transition-all duration-300 text-center cursor-pointer"
   >
     <div className="bg-gray-700 p-4 rounded-full mb-6">
-      <Icon className="w-8 h-8 text-green-400" />
+      <Icon className="w-8 h-8 text-blue-500" />
     </div>
     <h3 className="text-2xl font-semibold mb-4">{title}</h3>
     <p className="text-gray-400 flex-grow">{description}</p>
@@ -486,7 +486,7 @@ const Modal = ({ isOpen, onClose, data, fabLinks, t }) => {
         className="bg-gray-900 rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 md:p-8 transform scale-100"
       >
         <div className="flex justify-between items-center border-b border-gray-700 pb-4 mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-green-400">{data.title}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-500">{data.title}</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-white">
             <X size={32} />
           </button>
@@ -506,13 +506,13 @@ const LanguageSwitcher = ({ currentLang, setLang }) => (
   <div className="flex items-center space-x-2">
     <button 
       onClick={() => setLang('en')} 
-      className={`px-3 py-1 text-sm rounded-md transition-colors ${currentLang === 'en' ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+      className={`px-3 py-1 text-sm rounded-md transition-colors ${currentLang === 'en' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
     >
       EN
     </button>
     <button 
       onClick={() => setLang('pt')} 
-      className={`px-3 py-1 text-sm rounded-md transition-colors ${currentLang === 'pt' ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
+      className={`px-3 py-1 text-sm rounded-md transition-colors ${currentLang === 'pt' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300 hover:bg-gray-600'}`}
     >
       PT
     </button>
@@ -538,7 +538,7 @@ const HeroSection = ({ content }) => (
     <div className="absolute inset-0 bg-black/70 z-10"></div>
     <div className="relative z-20 text-center px-4">
       <h1 className="text-4xl md:text-6xl font-bold leading-tight">{content.title}</h1>
-      <h2 className="text-4xl md:text-6xl font-bold text-green-400 mt-2 mb-4">{content.subtitle}</h2>
+      <h2 className="text-4xl md:text-6xl font-bold text-blue-500 mt-2 mb-4">{content.subtitle}</h2>
       <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">{content.description}</p>
       <a 
         href="#services" 
@@ -587,16 +587,16 @@ const Footer = ({ content }) => (
               href={content.address.url} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="hover:text-green-400"
+              className="hover:text-blue-500"
             >
               {content.address.line1}<br />{content.address.line2}
             </a>
           </p>
           <p className="mb-2">
-            <a href={`tel:${content.phone}`} className="hover:text-green-400">{content.phone}</a>
+            <a href={`tel:${content.phone}`} className="hover:text-blue-500">{content.phone}</a>
           </p>
           <p>
-            <a href={`mailto:${content.email}`} className="hover:text-green-400">{content.email}</a>
+            <a href={`mailto:${content.email}`} className="hover:text-blue-500">{content.email}</a>
           </p>
         </address>
       </div>
@@ -634,7 +634,7 @@ const FloatingActionButton = ({ onToggle, isOpen, links, buttonText }) => (
     </div>
     <button 
       onClick={onToggle} 
-      className="bg-green-500 text-white w-auto h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 focus:outline-none px-6 py-4"
+      className="bg-blue-600 text-white w-auto h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-blue-700 focus:outline-none px-6 py-4"
     >
       <span className="font-semibold text-lg">{buttonText}</span>
       <div className="ml-4 text-xl transition-transform duration-300">
@@ -654,10 +654,12 @@ export default function App() {
   const [isFabOpen, setIsFabOpen] = useState(false);
 
   const handleOpenModal = (modalId) => {
+    console.log('Opening modal:', modalId); // Debug log
     setActiveModalId(modalId);
   };
   
   const handleCloseModal = () => {
+    console.log('Closing modal'); // Debug log
     setActiveModalId(null);
   };
   
@@ -674,6 +676,9 @@ export default function App() {
   const currentFabLinks = siteConfig(t).fabLinks(t);
 
   const modalData = activeModalId ? currentModalsData[activeModalId] : null;
+
+  console.log('Current modal data:', modalData); // Debug log
+  console.log('Active modal ID:', activeModalId); // Debug log
 
   return (
     <div className="bg-gray-900 text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
